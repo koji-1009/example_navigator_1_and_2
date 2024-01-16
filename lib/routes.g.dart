@@ -22,6 +22,20 @@ RouteBase get $homeRoute => GoRouteData.$route(
           path: 'word/navigator-2',
           factory: $Navigator2WordRouteExtension._fromState,
         ),
+        GoRouteData.$route(
+          path: 'push/navigator-1',
+          factory: $Navigator1PushRouteExtension._fromState,
+        ),
+        GoRouteData.$route(
+          path: 'push/navigator-2',
+          factory: $Navigator2PushRouteExtension._fromState,
+          routes: [
+            GoRouteData.$route(
+              path: 'new',
+              factory: $Navigator2PushNewRouteExtension._fromState,
+            ),
+          ],
+        ),
       ],
     );
 
@@ -71,6 +85,60 @@ extension $Navigator2WordRouteExtension on Navigator2WordRoute {
         queryParams: {
           if (word != '') 'word': word,
         },
+      );
+
+  void go(BuildContext context) => context.go(location);
+
+  Future<T?> push<T>(BuildContext context) => context.push<T>(location);
+
+  void pushReplacement(BuildContext context) =>
+      context.pushReplacement(location);
+
+  void replace(BuildContext context) => context.replace(location);
+}
+
+extension $Navigator1PushRouteExtension on Navigator1PushRoute {
+  static Navigator1PushRoute _fromState(GoRouterState state) =>
+      const Navigator1PushRoute();
+
+  String get location => GoRouteData.$location(
+        '/push/navigator-1',
+      );
+
+  void go(BuildContext context) => context.go(location);
+
+  Future<T?> push<T>(BuildContext context) => context.push<T>(location);
+
+  void pushReplacement(BuildContext context) =>
+      context.pushReplacement(location);
+
+  void replace(BuildContext context) => context.replace(location);
+}
+
+extension $Navigator2PushRouteExtension on Navigator2PushRoute {
+  static Navigator2PushRoute _fromState(GoRouterState state) =>
+      const Navigator2PushRoute();
+
+  String get location => GoRouteData.$location(
+        '/push/navigator-2',
+      );
+
+  void go(BuildContext context) => context.go(location);
+
+  Future<T?> push<T>(BuildContext context) => context.push<T>(location);
+
+  void pushReplacement(BuildContext context) =>
+      context.pushReplacement(location);
+
+  void replace(BuildContext context) => context.replace(location);
+}
+
+extension $Navigator2PushNewRouteExtension on Navigator2PushNewRoute {
+  static Navigator2PushNewRoute _fromState(GoRouterState state) =>
+      const Navigator2PushNewRoute();
+
+  String get location => GoRouteData.$location(
+        '/push/navigator-2/new',
       );
 
   void go(BuildContext context) => context.go(location);

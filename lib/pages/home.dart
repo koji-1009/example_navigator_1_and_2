@@ -33,6 +33,22 @@ class HomePage extends StatelessWidget {
               },
             ),
           ),
+          Card(
+            child: ListTile(
+              title: const Text('Navigator 1 (push)'),
+              onTap: () {
+                const Navigator1PushRoute().go(context);
+              },
+            ),
+          ),
+          Card(
+            child: ListTile(
+              title: const Text('Navigator 2 (push)'),
+              onTap: () {
+                const Navigator2PushRoute().go(context);
+              },
+            ),
+          ),
         ],
       ),
     );
