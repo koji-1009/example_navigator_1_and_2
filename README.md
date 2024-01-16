@@ -1,6 +1,13 @@
 # navigator_1_and_2
 
-A new Flutter project.
+Navigator 1と2の動作を確認するための、サンプルプロジェクト。
+
+## Build
+
+```bash
+flutter build web --base-href /example_navigator_1_and_2/
+mv ./build/web ./docs
+```
 
 ## Getting Started
 
