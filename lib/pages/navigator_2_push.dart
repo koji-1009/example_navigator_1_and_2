@@ -32,11 +32,7 @@ class Navigator2PushPage extends StatelessWidget {
           const Gap(16),
           FilledButton(
             onPressed: () {
-              Navigator.of(context).push(
-                MaterialPageRoute(
-                  builder: (context) => const NewScaffoldPage(),
-                ),
-              );
+              const Navigator2PushNewRoute().push(context);
             },
             child: const Text('New Scaffold (GoRouter push)'),
           ),
