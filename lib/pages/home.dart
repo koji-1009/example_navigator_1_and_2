@@ -18,6 +18,7 @@ class HomePage extends StatelessWidget {
         ),
         children: [
           Card(
+            clipBehavior: Clip.antiAlias,
             child: ListTile(
               title: const Text('Navigator 1 (word)'),
               onTap: () {
@@ -26,6 +27,7 @@ class HomePage extends StatelessWidget {
             ),
           ),
           Card(
+            clipBehavior: Clip.antiAlias,
             child: ListTile(
               title: const Text('Navigator 2 (word)'),
               onTap: () {
@@ -34,6 +36,7 @@ class HomePage extends StatelessWidget {
             ),
           ),
           Card(
+            clipBehavior: Clip.antiAlias,
             child: ListTile(
               title: const Text('Navigator 1 (push)'),
               onTap: () {
@@ -42,6 +45,7 @@ class HomePage extends StatelessWidget {
             ),
           ),
           Card(
+            clipBehavior: Clip.antiAlias,
             child: ListTile(
               title: const Text('Navigator 2 (push)'),
               onTap: () {
